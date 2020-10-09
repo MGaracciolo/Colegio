@@ -12,7 +12,7 @@ import java.util.HashSet;
  * @author mgara
  */
 public class Alumno {
-    HashSet materias= new HashSet();
+    HashSet<Materia> materias= new HashSet<>();
     
     private int legajo;
 
@@ -68,7 +68,11 @@ public class Alumno {
         }*/
         
         
-         materias.add(materia);
+        if(materias.add(materia)){
+            System.out.println("Se agrego la materia "+materia.getNombre()+" a la lista de materias de "+apellido+" correctamente.");
+        }else{
+            System.out.println("No se pudo agregar la materia "+materia.getNombre()+" porque ya se encuentra en la lista de "+apellido+".");
+        }
     }
 
     public int cantidadMaterias() {
